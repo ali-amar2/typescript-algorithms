@@ -125,3 +125,14 @@ function mostFrequent(str) {
     console.log("Most frequent character: '".concat(maxChar, "' appeared ").concat(maxCounter, " times"));
 }
 mostFrequent("aliamar");
+//! 12. Find All Substrings of a Given String 
+function findAllSubstrings(str) {
+    var arr = [];
+    for (var i = 0; i < str.length; i++) {
+        for (var j = i; j < str.length; j++) {
+            arr.push(str.slice(i, j + 1));
+        }
+    }
+    console.log("substrings of ".concat(str, " : ").concat(arr));
+}
+findAllSubstrings("abcd");

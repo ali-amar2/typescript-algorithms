@@ -106,7 +106,7 @@ function longestSubstring(str: string): void {
 longestSubstring("abcadcef");
 
 //! 9. Find the Most Frequent Character
-function mostFrequent(str: string) {
+function mostFrequent(str: string): void {
   let counter = 0;
   let seenChars = new Set<string>();
   let maxCounter = 0;
@@ -126,3 +126,17 @@ function mostFrequent(str: string) {
   console.log(`Most frequent character: '${maxChar}' appeared ${maxCounter} times`);
 }
 mostFrequent("aliamar");
+
+//! 12. Find All Substrings of a Given String 
+function findAllSubstrings(str: string) {
+  let arr: string[] = []
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i; j < str.length; j++) {
+      arr.push(str.slice(i, j + 1))
+    }
+  }
+  console.log(`substrings of ${str} : ${arr}`);
+}
+findAllSubstrings("abcd")
+
+
