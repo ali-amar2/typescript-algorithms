@@ -127,8 +127,8 @@ function mostFrequent(str: string): void {
 }
 mostFrequent("aliamar");
 
-//! 12. Find All Substrings of a Given String 
-function findAllSubstrings(str: string) {
+//! 10. Find All Substrings of a Given String 
+function findAllSubstrings(str: string): void {
   let arr: string[] = []
   for (let i = 0; i < str.length; i++) {
     for (let j = i; j < str.length; j++) {
@@ -139,4 +139,18 @@ function findAllSubstrings(str: string) {
 }
 findAllSubstrings("abcd")
 
+//! 11. Check if a String is a Rotation of Another String 
+function isRotation(str1: string, str2: string): boolean {
+  if (str1.length != str2.length) return false;
+  str1 += str1
+  if (str1.includes(str2)) return true
+  return false
+}
+console.log(isRotation("abcd", "cdab"));
+
+//! 12. Remove All White Spaces from a String 
+function removeSpaces(str: string) {
+  console.log(str.replace(/\s+/g, ""));
+}
+removeSpaces("a bcd  e")
 
