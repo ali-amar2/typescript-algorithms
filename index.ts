@@ -154,3 +154,31 @@ function removeSpaces(str: string) {
 }
 removeSpaces("a bcd  e")
 
+// ! 13. Convert a String to Title Case 
+function toTitleCase(str: string): string {
+  let splitWords = str.split(" ")
+  const words = splitWords.map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  return words.join(" ")
+}
+console.log(toTitleCase("hello woRld"))
+
+//! 14. Find the Longest Common Prefix between two strings
+function longestCommonPrefix(str1: string, str2: string): string {
+  const minLength = Math.min(str1.length, str2.length)
+  let longestPrefix = ""
+  for (let i = 0; i < minLength; i++) {
+    if (str1[i] === str2[i]) longestPrefix += str1[i]
+    else break
+  }
+  return longestPrefix || "There is no longest common prefix";
+
+}
+console.log(longestCommonPrefix("flower", "flight"));
+
+//! 15. Convert a String to a Character Array 
+function stringToChars(str: string): string[] {
+  let charArr = str.split("")
+  return charArr
+}
+console.log(stringToChars("hello"));
+

@@ -151,3 +151,29 @@ function removeSpaces(str) {
     console.log(str.replace(/\s+/g, ""));
 }
 removeSpaces("a bcd  e");
+// ! 13. Convert a String to Title Case 
+function toTitleCase(str) {
+    var splitWords = str.split(" ");
+    var words = splitWords.map(function (word) { return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); });
+    return words.join(" ");
+}
+console.log(toTitleCase("hello woRld"));
+//! 14. Find the Longest Common Prefix between two strings
+function longestCommonPrefix(str1, str2) {
+    var minLength = Math.min(str1.length, str2.length);
+    var longestPrefix = "";
+    for (var i = 0; i < minLength; i++) {
+        if (str1[i] === str2[i])
+            longestPrefix += str1[i];
+        else
+            break;
+    }
+    return longestPrefix || "There is no longest common prefix";
+}
+console.log(longestCommonPrefix("flower", "flight"));
+//! 15. Convert a String to a Character Array 
+function stringToChars(str) {
+    var charArr = str.split("");
+    return charArr;
+}
+console.log(stringToChars("hello"));
