@@ -177,3 +177,24 @@ function stringToChars(str) {
     return charArr;
 }
 console.log(stringToChars("hello"));
+//! 16. Replace Spaces with %20 (URL Encoding) 
+function encodeSpacesForURL(str) {
+    return str.replace(/ /g, "%20");
+}
+console.log(encodeSpacesForURL("Hello world"));
+//! 17. Convert a Sentence into an Acronym
+function toAcronym(str) {
+    var words = str.split(" ");
+    var acronym = words.map(function (word) { return word.charAt(0).toUpperCase(); }).join("");
+    return acronym;
+}
+console.log(toAcronym("Hello world wide web"));
+//! 18. Check if a String Contains Only Digits
+function containsOnlyDigit(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (isNaN(Number(str[i])))
+            return false;
+    }
+    return true;
+}
+console.log(containsOnlyDigit("1221as"));

@@ -171,7 +171,6 @@ function longestCommonPrefix(str1: string, str2: string): string {
     else break
   }
   return longestPrefix || "There is no longest common prefix";
-
 }
 console.log(longestCommonPrefix("flower", "flight"));
 
@@ -182,3 +181,27 @@ function stringToChars(str: string): string[] {
 }
 console.log(stringToChars("hello"));
 
+//! 16. Replace Spaces with %20 (URL Encoding) 
+function encodeSpacesForURL(str: string): String {
+  return str.replace(/ /g, "%20");
+}
+console.log(encodeSpacesForURL("Hello world"));
+
+//! 17. Convert a Sentence into an Acronym
+function toAcronym(str: string) {
+  const words = str.split(" ")
+  const acronym = words.map(word => word.charAt(0).toUpperCase()).join("")
+  return acronym
+
+}
+console.log(toAcronym("Hello world wide web"));
+
+//! 18. Check if a String Contains Only Digits
+function containsOnlyDigit(str: string): boolean {
+  for (let i = 0; i < str.length; i++) {
+    if (isNaN(Number(str[i]))) return false;
+  }
+  return true;
+}
+
+console.log(containsOnlyDigit("1221as")); 
